@@ -20,6 +20,7 @@
               ref="ruleForm2"
               label-width="100px"
               class="demo-ruleForm"
+              
             >
               <el-form-item label="用户名" prop="name">
                 <el-input v-model.number="ruleForm2.name"></el-input>

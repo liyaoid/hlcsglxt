@@ -62,6 +62,7 @@
 
 
 
+
 <script>
   import Left from '../components/Left.vue';
   import Top from "../components/Top.vue";

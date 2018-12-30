@@ -7,6 +7,7 @@ import "./assets/style/publick.css"
 
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
   render: h => h(App)

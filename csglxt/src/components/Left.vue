@@ -41,6 +41,7 @@
             <el-menu-item index="1-2">添加库存</el-menu-item>
             
 
+
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="4">

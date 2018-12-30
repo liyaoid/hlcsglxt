@@ -40,6 +40,7 @@ export default {
     return {
       ruleForm2: {
         pass: "",
+        
         checkPass: "",
         age: ""
       },

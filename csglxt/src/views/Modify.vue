@@ -70,6 +70,7 @@ export default {
           checkPass: '',
           oldpass: ''
         },
+        
         rules2: {
            oldpass:[
           { required: true, trigger: "blur", message: "用户名必须填写" },
