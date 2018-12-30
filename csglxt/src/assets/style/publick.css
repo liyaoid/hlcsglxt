@@ -1,0 +1,147 @@
+.el-submenu__title{
+    color: #ccc;
+    text-align:right;
+    background: url("../images/2_07.png") repeat-x;
+    height: 33px;
+    line-height: 33px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 5px 0px 0px 5px;
+  }
+.el-header,.el-footer{
+background-color: darkgray;
+}
+
+.el-header div p{
+color: black;
+margin: 0;
+font-size: 24px;
+font-weight: bold;
+margin-top: 26px;
+}
+.el-header div span{
+font-size: 14px;
+}
+.el-aside {
+/* text-align: center; */
+    background:url("../images/3.png");
+    color: lightcyan;
+}
+.el-aside h1{
+margin: 0;
+font-size: 24px;
+padding-top: 10px;
+padding-left: 7px;
+}
+.el-aside p{
+padding-left:106px;
+font-size: 14px;
+}
+.el-aside h3{
+font-size: 14px;
+padding-left: 76px;
+margin: 0;
+
+}
+.el-menu{
+background-color: transparent;
+border: 0;
+}
+a{
+color: aliceblue;
+list-style: none;
+}
+/* .el-main {
+text-align: center;
+line-height: 160px;
+} */
+.el-footer{
+font-size: 14px;
+line-height: 50px;
+}
+body > .el-container {
+margin-bottom: 40px;
+}
+.el-submenu__icon-arrow {
+    display: none;
+}
+.el-menu-item{  
+    color:#fff;
+    text-align: right;
+    
+    border-radius: 5px 0px 0px 5px;
+    width: 160px; 
+}
+.el-menu-item>a{
+    color: black;
+}
+.el-row{
+    padding-top: 20px;
+}
+
+.el-menu-item-group>ul{
+    border-bottom: 4px;
+    
+}
+.el-menu-item-group__title{
+    padding: 0;
+}
+.el-submenu .el-menu-item{
+    margin-left: 20px;
+    /* width: 200px; */
+    height: 33px;
+    line-height: 33px;
+    color: #aaaaaa;
+    min-width:180px;
+    padding-right: 20px;
+    
+}
+.el-menu-item:hover{
+    background:#fff;
+}
+.el-menu-item.is-active{
+    color: red;
+}
+.el-menu-item.is-active a{
+    color: red;
+}
+.el-menu .el-menu--inline{
+    width: 200px;
+}
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+line-height: 320px;
+}
+.el-container {
+height: 100%;
+}
+::-webkit-scrollbar{
+    width: 0 !important;
+}
+
+/* ````````````````````````````````````````````````````````````````` */
+.el-alert--success{
+    margin-bottom: 10px;
+   
+}
+h4{
+      font-size: 24px;
+      margin: 0;
+}
+h5{
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.el-card__header{
+    padding: 0;
+}
+.el-table__header{
+    width: 100%;
+}
+
