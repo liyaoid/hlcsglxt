@@ -39,6 +39,10 @@
               </el-form-item>
 
               <el-form-item>
+
+
+
+                      
                 <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
               </el-form-item>
             </el-form>
@@ -61,22 +65,7 @@ import Bottom from "../components/bottom.vue";
 
 export default {
   data() {
-    /*  var checkAge = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error("年龄不能为空"));
-      }
-      setTimeout(() => {
-        if (!Number.isInteger(value)) {
-          callback(new Error("请输入数字值"));
-        } else {
-          if (value < 18) {
-            callback(new Error("必须年满18岁"));
-          } else {
-            callback();
-          }
-        }
-      }, 1000);
-    }; */
+ 
     var validatePass = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入密码"));
@@ -100,7 +89,8 @@ export default {
       ruleForm2: {
         pass: "",
         checkPass: "",
-        name: ""
+        name: "",
+        usergroup:""
       },
       rules2: {
         pass: [
@@ -139,15 +129,41 @@ export default {
       this.$refs[formName].validate(valid => {
         //valid表示表单验证结果, ture 表示验证通过 flase 表示验证失败
         if (valid) {
+          //1)使用axios到后端api请求数据;
+          this.axios.post("http://127.0.0.1:9090/user/useradd",
+            //使用qs处理post的参数;
+            this.qs.stringify(this.ruleForm2)
+          ).then(result =>{
+            console.log("服务器成功返回的结果",result);
+            //result
+            //根据返回结果处理义务逻辑;
+            if(result.data.isOk){
+              //添加成功;
+              this.$message( {
+                message: result.data.msg,
+                type:"sucess"
+              });
+              setTimeout( () =>{
+                this.$router.push("/UserList")
+              },100);
+            }else{
+              //添加失败;
+              this.$message.error(result.data.msg);
+            }
+          }).catch(err=>{
+            console.error("服务器错误返回的信息",err);
+          });
+         
          // alert("submit!");
         //  提交到的页面  使用路由对的 push 实现跳转页面
-         this.$router.push("/")
+        //  this.$router.push("/")
         } else {
          // console.log("error submit!!");
           return false;
         }
       });
     },
+    
     resetForm(formName){
       this.$refs[formName].resetFields();
     }
