@@ -5,7 +5,7 @@
       <p>你好,addime</p>
       <h3>
         <router-link to="#">管理首页</router-link>|
-        <router-link to="#">退出系统</router-link>
+        <a href="javascript:void(0)" @click="loginOut()">退出系统</a>
       </h3>
       <el-menu
         :default-active="$route.path"
@@ -28,8 +28,8 @@
             <span>商品管理</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1">商品管理</el-menu-item>
-            <el-menu-item index="1-2">添加商品</el-menu-item>
+            <el-menu-item index="/goodslist"> <router-link to="/goodslist">商品管理</router-link></el-menu-item>
+            <el-menu-item index="/goodsadd"> <router-link to="/goodsadd">商品管理</router-link></el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
@@ -117,9 +117,24 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    loginOut(){
+      //发起ajax到后端路由去执行清除cookie的操作
+      this.axios.get("http://127.0.0.1:9090/user/loginOut").then(result=>{
+        //根据是否清除成功处理业务逻辑
+        if(result.data.isOk){
+          this.$message({
+            message: '退出成功！ 欢迎下次登录!',
+            type: 'success'
+          });
+          this.$router.push("/DengLu");
+        }
+      }).catch(err=>{
+        console.log(err);
+      })
     }
   },
-
+    
 
 
 }

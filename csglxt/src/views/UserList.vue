@@ -162,13 +162,11 @@ export default {
         //valid参数表示验证的结果，true表示验证通过，false验证失败
         if (valid) {
           //发起ajax请求去后端做数据库添加用户
-          //1）获取用户数据
           console.log(this.ruleForm2);
           //alert("修改验证通过!!!");
           
-          //2)前端——收集新的数据并发起ajax请求到后端api:   http://172.16.4.254:9090/user/usersave
-          this.axios.post(
-            "http://127.0.0.1:9090/user/usersave",
+          //2)前端——收集新的数据并发起ajax请求到后端api:  
+          this.axios.post("http://127.0.0.1:9090/user/usersave",
              this.qs.stringify(this.ruleForm2)
           ).then(result=>{
              //reslt {"isOk":true,"code":1,"msg":"用户添加成功！"}
@@ -186,7 +184,7 @@ export default {
                 this.$message.error(result.data.msg);
              }
           }).catch(err=>{
-            this.$message.error('错了哦'+err.message);
+            this.$message.error('出错了'+err.message);
           })
         } else {
           //alert("× 表单验证失败!");
@@ -217,7 +215,7 @@ export default {
         //5-2. 使用双向数据绑定回填数据
         this.dialogVisible=true;  //显示对话框
       }).catch(err=>{
-        this.$message.error('出错了1：'+err.message); //调用消息框给用户提示
+        this.$message.error('出错啦：'+err.message); //调用消息框给用户提示
       })
     },
    /*  handleEdit(userid) {
@@ -241,7 +239,7 @@ export default {
             this.getusers();
           } else {
             //删出失败;
-            this.$message.error("出错了:" + result.msg);
+            this.$message.error("出错了1:" + result.msg);
           }
         })
         .catch(err => {
